@@ -14,7 +14,7 @@ public class ChronometerExampleActivity extends Activity {
         Chronometer mChronometer = (Chronometer) findViewById(R.id.chronometer);
         mChronometer.start();     
         
-        //IF you want to stop your chrono after X seconds or minutes.
+        //IF you want to stop your chrono after X seconds or minutes..
         mChronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
 			public void onChronometerTick(Chronometer chronometer) {
 				if (chronometer.getText().toString().equalsIgnoreCase("00:05:0")) { //When reaches 5 seconds.
