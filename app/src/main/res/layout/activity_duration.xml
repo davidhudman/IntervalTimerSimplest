@@ -97,9 +97,10 @@
 
             <Button
                 android:id="@+id/startButton"
-                android:text="SET TIMER LENGTH"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="sendMessage"
+                android:text="SET TIMER LENGTH"
                 android:textSize="28dp" />
 
             <TextView
@@ -110,9 +111,10 @@
 
             <Button
                 android:id="@+id/perpetualButton"
-                android:text="Beep Forever"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="sendMessage"
+                android:text="Beep Forever"
                 android:textSize="28dp" />
 
             <!-- Results -->

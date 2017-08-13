@@ -120,9 +120,9 @@
 
                 <Button
                     android:id="@+id/startButton"
-                    android:text="START"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="START"
                     android:textSize="28dp" />
 
                 <Button
