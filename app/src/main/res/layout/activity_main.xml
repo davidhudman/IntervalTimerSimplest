@@ -159,17 +159,15 @@
                     android:text="min      sec      mill"
                     android:id="@+id/textViewPickerInterval2" />
 
-                <Chronometer
+                <com.example.david.intervaltimersimplest.Chronometer
                     android:id="@+id/chronometer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <EditText
-                    android:id="@+id/editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="time" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    style="@android:style/Widget.Button"
+                    android:textSize="62dp"
+                    android:onClick="chronometerClick" />
 
             </LinearLayout>
 

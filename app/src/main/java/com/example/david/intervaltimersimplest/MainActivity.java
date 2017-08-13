@@ -45,6 +45,8 @@ public class MainActivity extends ActionBarActivity {
 
     private float levelOfAccuracy = (float) .01;
 
+    public Chronometer chronometer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,8 @@ public class MainActivity extends ActionBarActivity {
         // assign your view elements their actual components from the view so we can modify them
         // countdownTickFrequency = (EditText) findViewById(R.id.countdownTickFrequency);
         // countdownLength = (EditText) findViewById(R.id.countdownLength);
+        chronometer = (Chronometer) findViewById(R.id.chronometer);
+        chronometer.stop();
         startCountdown = (Button) findViewById(R.id.startButton);
         countdownResults = (TextView) findViewById(R.id.textView);
         remainingTimeText = (TextView) findViewById(R.id.remainingTimeText);
@@ -258,6 +262,14 @@ public class MainActivity extends ActionBarActivity {
         float message = (minutePickerInterval.getValue() * 60) + (secondPickerInterval.getValue()) + (float) (millisecondPickerInterval.getValue() * levelOfAccuracy);
         intent.putExtra(ALERT_FREQUENCY, message);
         startActivity(intent);
+    }
+
+    public void chronometerClick(View view) {
+        if (chronometer.isRunning())
+            chronometer.stop();
+
+        else
+            chronometer.start();
     }
 
     @Override
