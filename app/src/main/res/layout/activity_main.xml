@@ -12,104 +12,6 @@
             android:orientation="vertical" >
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
-
-                <LinearLayout
-                    android:id="@+id/elapsedTimerLayout"
-                    xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:tools="http://schemas.android.com/tools"
-                    android:layout_width="200dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    tools:context=".MainActivity"
-                    android:gravity="left">
-                    <TextView
-                        android:id="@+id/elapsedTimeLabel"
-                        android:text="Elapsed:"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="left" />
-                    <TextView
-                        android:id="@+id/elapsedTimeText"
-                        android:text="00:00:00.000"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="left" />
-
-                    <!--
-                    <TextView
-                        android:id="@+id/BeepIntervalLabel01"
-                        android:text="Beep Interval"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="left" />
-                    <TextView
-                        android:id="@+id/CountdownLabel01"
-                        android:text="Countdown"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="left" />
-
-                    -->
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:tools="http://schemas.android.com/tools"
-                    android:layout_width="200dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    tools:context=".MainActivity"
-                    android:gravity="right">
-                    <TextView
-                        android:id="@+id/remainingTimeLabel"
-                        android:text="Remaining:"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="left" />
-                    <TextView
-                        android:id="@+id/remainingTimeText"
-                        android:text="00:00:00.000"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="left" />
-
-                    <!--
-                    <EditText
-                        android:id="@+id/countdownLength"
-                        android:text="60"
-                        android:hint="seconds"
-                        android:inputType="numberDecimal"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="left" />
-
-                    <EditText
-                        android:id="@+id/countdownTickFrequency"
-                        android:text="2.5"
-                        android:hint="seconds"
-                        android:inputType="numberDecimal"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="left" />
-
-                    -->
-
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
@@ -117,13 +19,6 @@
                 android:orientation="horizontal"
                 android:gravity="center_horizontal"
                 tools:context=".MainActivity">
-
-                <Button
-                    android:id="@+id/startButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="START"
-                    android:textSize="28dp" />
 
                 <Button
                     android:id="@+id/nextScreenButton"
@@ -158,17 +53,6 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="min      sec      mill"
                     android:id="@+id/textViewPickerInterval2" />
-
-                <com.example.david.intervaltimersimplest.Chronometer
-                    android:id="@+id/chronometer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center_horizontal"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    style="@android:style/Widget.Button"
-                    android:textSize="62dp"
-                    android:onClick="chronometerClick" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -214,99 +98,6 @@
                     android:id="@+id/millisecondPickerInterval"
                     max="99"
                     min="0" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center_horizontal"
-                tools:context=".MainActivity">
-
-                <TextView
-                    android:id="@+id/textViewPickerCountdown1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="\nCountdown"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
-
-                <TextView
-                    android:id="@+id/textViewPickerCountdown2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="min      sec      mill"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center_horizontal"
-                tools:context=".MainActivity">
-
-                <!-- Interval Picker -->
-                <com.example.david.intervaltimersimplest.NumberPickerCustom
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/minutePickerCountdown"
-                    value="99"
-                    max="99"
-                    min="0" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="\n\n\n:" />
-
-                <com.example.david.intervaltimersimplest.NumberPickerCustom
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/secondPickerCountdown"
-                    max="59"
-                    min="0" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="\n\n\n." />
-
-                <com.example.david.intervaltimersimplest.NumberPickerCustom
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/millisecondPickerCountdown"
-                    max="99"
-                    min="0" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center_horizontal"
-                tools:context=".MainActivity">
-
-                <!-- Results -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="32dp"
-                    android:text="Results"
-                    android:id="@+id/textView"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="187dp" />
 
             </LinearLayout>
 
