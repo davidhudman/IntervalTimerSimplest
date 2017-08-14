@@ -152,9 +152,6 @@ public class MainTimerUI extends ActionBarActivity {
             }
         });
 
-
-        // final AudioManager.OnAudioFocusChangeListener afChangeListener;
-
         // when the button is clicked, do this
         startCountdown.setOnClickListener(new View.OnClickListener(){
 
@@ -165,28 +162,16 @@ public class MainTimerUI extends ActionBarActivity {
 
                     startCountdown.setText("STOP BEEP");
 
-
-                    if(true) {
-                        // countdownTick = 0; // (minutePickerInterval.getValue() * 60) + (secondPickerInterval.getValue()) + (float) (millisecondPickerInterval.getValue() * levelOfAccuracy);
-                        // countdownLen = 0; // (minutePickerCountdown.getValue() * 60) + (secondPickerCountdown.getValue()) + (float) (millisecondPickerCountdown.getValue() * levelOfAccuracy);
-
-                        // audioTimerPrintThis("\n" + Float.toString(countdownTick) + " : " + Float.toString(countdownLen) + " test");
-
-                        // create beeping countDownTimer purely for the audio
-                        // create visualTimer for the visual aspect of the beeping timer
-
-                        countDownTimer.start();
-                        visualTimer.start();
-                    }
+                    countDownTimer.start();
+                    visualTimer.start();
                 }
                 else {
                     isTimerStarted = !isTimerStarted;
 
                     countDownTimer.stop();
                     visualTimer.stop();
-                    countDownTimer = null;
-                    visualTimer = null;
-
+                    // countDownTimer = null;
+                    // visualTimer = null;
                     startCountdown.setText("START BEEP");
                 }
             }
@@ -265,6 +250,8 @@ public class MainTimerUI extends ActionBarActivity {
             countDownTimer.start();
             visualTimer.start();
             chronometer.start();
+            isTimerStarted = !isTimerStarted;
+            startCountdown.setText("STOP BEEP");
         }
     }
 
