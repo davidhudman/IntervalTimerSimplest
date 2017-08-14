@@ -80,6 +80,25 @@ public abstract class preciseCountdown extends Timer {
         };
     }
 
+    public void setTotalTime(long total_Time) {
+        totalTime = total_Time;
+    }
+    public long getTotalTime() {
+        return totalTime;
+    }
+    public void setInterval(long _interval) {
+        interval = _interval;
+    }
+    public long getInterval() {
+        return interval;
+    }
+    public void setDelay(long _delay) {
+        delay = _delay;
+    }
+    public long getDelay() {
+        return delay;
+    }
+
     public abstract void onTick(long timeLeft);
     public abstract void onFinished();
 }

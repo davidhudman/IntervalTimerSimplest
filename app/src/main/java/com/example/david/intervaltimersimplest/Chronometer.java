@@ -82,9 +82,9 @@ public class Chronometer extends TextView {
         updateRunning();
     }
 
-    public void split() {
-        mStarted = false;
+    public String getSplit() {
         updateRunning();
+        return getText(SystemClock.elapsedRealtime());
     }
 
     public void stop() {
@@ -122,35 +122,39 @@ public class Chronometer extends TextView {
         updateRunning();
     }
 
-    private synchronized void updateText(long now) {
+    public String getText(long now) {
         timeElapsed = now - mBase;
-        
+
         DecimalFormat twoDigits = new DecimalFormat("00");
         DecimalFormat threeDigits = new DecimalFormat("000");
-        
+
         int hours = (int)(timeElapsed / (3600 * 1000));
         int remaining = (int)(timeElapsed % (3600 * 1000));
-        
+
         int minutes = (int)(remaining / (60 * 1000));
         remaining = (int)(remaining % (60 * 1000));
-        
+
         int seconds = (int)(remaining / 1000);
         remaining = (int)(remaining % (1000));
-        
+
         int milliseconds = (int)(((int)timeElapsed % 1000) / 1);
-        
+
         String text = "";
-        
+
         if (hours > 0) {
-        	text += twoDigits.format(hours) + ":";
+            text += twoDigits.format(hours) + ":";
         }
-        
-       	text += twoDigits.format(minutes) + ":";
-       	text += twoDigits.format(seconds) + ":";
-       	// text += Integer.toString(milliseconds);
+
+        text += twoDigits.format(minutes) + ":";
+        text += twoDigits.format(seconds) + ".";
+        // text += Integer.toString(milliseconds);
         text += threeDigits.format(milliseconds);
 
-        setText(text);
+        return text;
+    }
+
+    private synchronized void updateText(long now) {
+        setText(getText(now));
     }
 
     private void updateRunning() {
@@ -159,8 +163,7 @@ public class Chronometer extends TextView {
             if (running) {
                 updateText(SystemClock.elapsedRealtime());
                 dispatchChronometerTick();
-                mHandler.sendMessageDelayed(Message.obtain(mHandler,
-                        TICK_WHAT), 1);
+                mHandler.sendMessageDelayed(Message.obtain(mHandler, TICK_WHAT), 1);
             } else {
                 mHandler.removeMessages(TICK_WHAT);
             }
@@ -173,8 +176,7 @@ public class Chronometer extends TextView {
             if (mRunning) {
                 updateText(SystemClock.elapsedRealtime());
                 dispatchChronometerTick();
-                sendMessageDelayed(Message.obtain(this , TICK_WHAT),
-                        1);
+                sendMessageDelayed(Message.obtain(this , TICK_WHAT), 1);
             }
         }
     };
