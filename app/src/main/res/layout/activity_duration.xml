@@ -60,11 +60,20 @@
 
                 <!-- Interval Picker -->
                 <com.example.david.intervaltimersimplest.NumberPickerCustom
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants"
+                    android:id="@+id/minutePickerCountdown1"
+                    value="9"
+                    max="9"
+                    min="0" />
+                <com.example.david.intervaltimersimplest.NumberPickerCustom
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants"
                     android:id="@+id/minutePickerCountdown2"
-                    value="99"
-                    max="99"
+                    value="9"
+                    max="9"
                     min="0" />
 
                 <TextView
@@ -74,10 +83,19 @@
                     android:text="\n\n\n:" />
 
                 <com.example.david.intervaltimersimplest.NumberPickerCustom
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants"
+                    android:id="@+id/secondPickerCountdown1"
+                    max="5"
+                    min="0" />
+
+                <com.example.david.intervaltimersimplest.NumberPickerCustom
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants"
                     android:id="@+id/secondPickerCountdown2"
-                    max="59"
+                    max="9"
                     min="0" />
 
                 <TextView
@@ -87,10 +105,19 @@
                     android:text="\n\n\n." />
 
                 <com.example.david.intervaltimersimplest.NumberPickerCustom
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants"
+                    android:id="@+id/millisecondPickerCountdown1"
+                    max="9"
+                    min="0" />
+
+                <com.example.david.intervaltimersimplest.NumberPickerCustom
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants"
                     android:id="@+id/millisecondPickerCountdown2"
-                    max="99"
+                    max="9"
                     min="0" />
 
             </LinearLayout>

@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 import static android.support.v4.app.NotificationCompat.CATEGORY_MESSAGE;
 import static android.support.v4.app.NotificationCompat.PRIORITY_MAX;
 
@@ -46,6 +48,10 @@ public class MainTimerUI extends ActionBarActivity {
     public TextView splitsView;
 
     public AudioManager am;
+    public int lap = 0;
+    public String lastSplit = "0";
+
+    DecimalFormat threeDigits = new DecimalFormat("000");
 
     // Request audio focus for playback
     public AudioManager.OnAudioFocusChangeListener afChangeListener;
@@ -302,7 +308,9 @@ public class MainTimerUI extends ActionBarActivity {
 
     public void chronometerClick(View view) {
         if (chronometer.isRunning()) {
-            splitsView.setText(chronometer.getSplit() + "\n" + splitsView.getText().toString());
+            splitsView.setText("Lap" + threeDigits.format(lap++) + " - "
+                    + chronometer.getSplit()
+                    + "\n" + splitsView.getText().toString());  // add everything that was already there, too
         }
         else
             chronometer.start();

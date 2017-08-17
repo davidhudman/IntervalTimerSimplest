@@ -66,10 +66,18 @@
 
                 <!-- Interval Picker -->
                 <com.example.david.intervaltimersimplest.NumberPickerCustom
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/minutePickerInterval"
-                    max="99"
+                    android:descendantFocusability="blocksDescendants"
+                    android:id="@+id/minutePickerInterval1"
+                    max="9"
+                    min="0" />
+                <com.example.david.intervaltimersimplest.NumberPickerCustom
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants"
+                    android:id="@+id/minutePickerInterval2"
+                    max="9"
                     min="0" />
 
                 <TextView
@@ -79,11 +87,20 @@
                     android:text="\n\n\n:" />
 
                 <com.example.david.intervaltimersimplest.NumberPickerCustom
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/secondPickerInterval"
+                    android:descendantFocusability="blocksDescendants"
+                    android:id="@+id/secondPickerInterval1"
+                    value="0"
+                    max="5"
+                    min="0" />
+                <com.example.david.intervaltimersimplest.NumberPickerCustom
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants"
+                    android:id="@+id/secondPickerInterval2"
                     value="2"
-                    max="59"
+                    max="9"
                     min="0" />
 
                 <TextView
@@ -93,10 +110,19 @@
                     android:text="\n\n\n." />
 
                 <com.example.david.intervaltimersimplest.NumberPickerCustom
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/millisecondPickerInterval"
-                    max="99"
+                    android:descendantFocusability="blocksDescendants"
+                    android:id="@+id/millisecondPickerInterval1"
+                    max="9"
+                    min="0" />
+
+                <com.example.david.intervaltimersimplest.NumberPickerCustom
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants"
+                    android:id="@+id/millisecondPickerInterval2"
+                    max="9"
                     min="0" />
 
             </LinearLayout>

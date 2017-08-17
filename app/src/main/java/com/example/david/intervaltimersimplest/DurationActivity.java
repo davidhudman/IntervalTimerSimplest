@@ -7,7 +7,7 @@ import android.view.View;
 
 public class DurationActivity extends ActionBarActivity {
 
-    public NumberPickerCustom minutePickerCountdown, secondPickerCountdown, millisecondPickerCountdown;
+    public NumberPickerCustom minutePickerCountdown1, secondPickerCountdown1, millisecondPickerCountdown1, minutePickerCountdown2, secondPickerCountdown2, millisecondPickerCountdown2;
     public float levelOfAccuracy = (float) .01;
     public static final String TIMER_DATA_STRINGS = "Interval,CountdownLength";
     public String TIMER_DATA_DATA;
@@ -19,9 +19,12 @@ public class DurationActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_duration);
 
-        minutePickerCountdown = (NumberPickerCustom) findViewById(R.id.minutePickerCountdown2);
-        secondPickerCountdown = (NumberPickerCustom) findViewById(R.id.secondPickerCountdown2);
-        millisecondPickerCountdown = (NumberPickerCustom) findViewById(R.id.millisecondPickerCountdown2);
+        minutePickerCountdown1 = (NumberPickerCustom) findViewById(R.id.minutePickerCountdown1);
+        secondPickerCountdown1 = (NumberPickerCustom) findViewById(R.id.secondPickerCountdown1);
+        millisecondPickerCountdown1 = (NumberPickerCustom) findViewById(R.id.millisecondPickerCountdown1);
+        minutePickerCountdown2 = (NumberPickerCustom) findViewById(R.id.minutePickerCountdown2);
+        secondPickerCountdown2 = (NumberPickerCustom) findViewById(R.id.secondPickerCountdown2);
+        millisecondPickerCountdown2 = (NumberPickerCustom) findViewById(R.id.millisecondPickerCountdown2);
         // chronometer = (Chronometer) findViewById(R.id.chronometer);
         // chronometer.start();
 
@@ -42,7 +45,10 @@ public class DurationActivity extends ActionBarActivity {
         Intent intent = new Intent(this, MainTimerUI.class);
         // EditText editText = (EditText) findViewById(R.id.editText);
         // String message = editText.getText().toString();
-        float message = ((minutePickerCountdown.getValue() * 60) + (secondPickerCountdown.getValue()) + (float) (millisecondPickerCountdown.getValue() * levelOfAccuracy));
+        float message = (
+                (((minutePickerCountdown1.getValue() * 10) + minutePickerCountdown2.getValue() ) * 60)
+                + ((secondPickerCountdown1.getValue() * 10) + secondPickerCountdown2.getValue())
+                + (float) (((millisecondPickerCountdown1.getValue() * 10) + millisecondPickerCountdown2.getValue()) * levelOfAccuracy));
         TIMER_DATA_DATA += message;
         intent.putExtra(TIMER_DATA_STRINGS, TIMER_DATA_DATA);
         startActivity(intent);

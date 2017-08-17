@@ -20,9 +20,9 @@ public class MainActivity extends ActionBarActivity {
     // Declare your view elements
     public EditText countdownTickFrequency;
     public EditText countdownLength;
-    public NumberPickerCustom minutePickerInterval;
-    public NumberPickerCustom secondPickerInterval;
-    public NumberPickerCustom millisecondPickerInterval;
+    public NumberPickerCustom minutePickerInterval1, secondPickerInterval1,
+            millisecondPickerInterval1, minutePickerInterval2,
+            secondPickerInterval2, millisecondPickerInterval2;
 
     public static final String ALERT_FREQUENCY = "com.example.david.IntervalTimerSimplest.ALERT_FREQUENCY";
     private float levelOfAccuracy = (float) .01;
@@ -37,9 +37,12 @@ public class MainActivity extends ActionBarActivity {
         // assign your view elements their actual components from the view so we can modify them
         // countdownTickFrequency = (EditText) findViewById(R.id.countdownTickFrequency);
         // countdownLength = (EditText) findViewById(R.id.countdownLength);
-        minutePickerInterval = (NumberPickerCustom) findViewById(R.id.minutePickerInterval);
-        secondPickerInterval = (NumberPickerCustom) findViewById(R.id.secondPickerInterval);
-        millisecondPickerInterval = (NumberPickerCustom) findViewById(R.id.millisecondPickerInterval);
+        minutePickerInterval1 = (NumberPickerCustom) findViewById(R.id.minutePickerInterval1);
+        secondPickerInterval1 = (NumberPickerCustom) findViewById(R.id.secondPickerInterval1);
+        millisecondPickerInterval1 = (NumberPickerCustom) findViewById(R.id.millisecondPickerInterval1);
+        minutePickerInterval2 = (NumberPickerCustom) findViewById(R.id.minutePickerInterval2);
+        secondPickerInterval2 = (NumberPickerCustom) findViewById(R.id.secondPickerInterval2);
+        millisecondPickerInterval2 = (NumberPickerCustom) findViewById(R.id.millisecondPickerInterval2);
     }
 
     /** Called when the user taps the Send button */
@@ -48,7 +51,10 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent(this, DurationActivity.class);
         // EditText editText = (EditText) findViewById(R.id.editText);
         // String message = editText.getText().toString();
-        float message = (minutePickerInterval.getValue() * 60) + (secondPickerInterval.getValue()) + (float) (millisecondPickerInterval.getValue() * levelOfAccuracy);
+        float message = (
+                (((minutePickerInterval1.getValue() * 10) + minutePickerInterval2.getValue() ) * 60)
+                + ((secondPickerInterval1.getValue() * 10) + secondPickerInterval2.getValue())
+                + (float) (((millisecondPickerInterval1.getValue() * 10) + millisecondPickerInterval2.getValue()) * levelOfAccuracy));
         intent.putExtra(ALERT_FREQUENCY, message);
         startActivity(intent);
     }
